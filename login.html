@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="demo.css"> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   
+    <title>Log In</title>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h2>Log In</h2>
+
+            <form action="">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" name="form-control" id="email" name="email" placeholder="Enter Your Email...">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" name="form-control" id="password" name="password" placeholder="Enter  password...">
+                </div>
+                <div class="text-center">
+                    <button type="button" onclick="saveData()" class="btn btn-primary" id="save_btn">Signup</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+<script>
+    function saveData(){
+        let email,password;
+        email = document.getElementById("email").value;
+        password = document.getElementById("password").value;
+
+        let user_record = new Array();
+        user_record = JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
+        if(user_record.some((v) =>{
+            return v.email == email && v.password == password
+        })){
+            alert("login Successfully");
+            let current_user = user-record.filter((v) => {
+                return v.email == email && v.password == password
+            })[0]
+            // save data in local storage in future user login use
+            localStorage.setItem("name", current_user.name);
+            localStorage.setItem("email", current_user.email);
+            window.location.href = "index.html";
+        }
+        else{
+            alert("Please check login and password");
+        }
+    }
+</script>
+</html>

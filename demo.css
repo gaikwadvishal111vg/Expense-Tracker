@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    width: 100%;
+    height: 100%;
+    background-color: blueviolet;
+}
+.container .card{
+    width: 50%;
+    height: 50%;
+    text-align: center;
+    background-color: white;
+    margin: 10px 10px;
+}
