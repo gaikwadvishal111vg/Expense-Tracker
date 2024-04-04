@@ -3,15 +3,18 @@ import expenseObj from './expense.js';
 
 
 
+
 // incomeTracker.initiate();
 
 class Tracker {
   constructor() {
     this.incomeObj = incomeObj;
     this.expenseObj = expenseObj;
+    
     this.incomeBtn = document.getElementById('incomeBtn');
     this.expenseBtn = document.getElementById('expenseBtn');
     this.summaryBtn = document.getElementById('summaryBtn');
+    
     this.incomeDiv = document.querySelector('.income-container');
     this.expenseDiv = document.querySelector('.expense-container');
     this.summaryDiv = document.querySelector('.summary-container');
@@ -30,7 +33,7 @@ class Tracker {
     this.expenseBtn.addEventListener('click', this.showTab.bind(this));
     this.summaryBtn.addEventListener('click', this.showTab.bind(this));
   }
-  showTab(e) {
+  showTab(e){
     const clickedTab = e.target.id;
     const container = clickedTab.split('Btn')[0];
     const containerName = `${clickedTab.split('Btn')[0]}-container`;
@@ -100,7 +103,7 @@ class Tracker {
     this.getSavings();
   }
 }
-
+  
 const tracker = new Tracker();
 tracker.initiate();
 
@@ -123,11 +126,21 @@ document.querySelector("#close").addEventListener("click", function(){
 });
 
 // logout button functionality
-const logoutButton = document.querySelector(".logoutBtn");
-logoutButton.addEventListener("click", () =>{
-  window.location.replace("login.html");
-});
-
+// const logoutButton = document.querySelector(".logoutBtn");
+// logoutButton.addEventListener("click", () =>{
+//   localStorage.removeItem("currentUser");
+//   window.location.href="./login.html";
+// });
+const logoutBtn = document.getElementById("logout");
+logoutBtn.addEventListener("click", () =>{
+    localStorage.removeItem("currentUser");
+    window.location.href="./login.html";
+ });
+// withou signin or register you cont access home page
+const currentUser = localStorage.getItem("currentUser");
+if(!currentUser){
+  window.location.href = "./signup.html";
+}
 // function logout(){
 //   localStorage.removeItem("name");
 //   localStorage.removeItem("email");
@@ -135,9 +148,7 @@ logoutButton.addEventListener("click", () =>{
 // }
 
 
-
-
-const geminiBtn = document.getElementById("Ai");
-geminiBtn.addEventListener("click", () =>{
-  window.location.replace("gemini.html");
-});
+const geminiAi = document.querySelector("#tracker");
+geminiAi.addEventListener("click", () =>{
+  window.location.href = "./gemini.html";
+})

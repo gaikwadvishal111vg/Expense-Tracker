@@ -136,12 +136,14 @@
         const main_container = document
           .querySelector(".main-container")
           .appendChild(geminiMessagediv);
-        geminiMessagediv.addEventListener("click", () =>
+          
+          geminiMessagediv.addEventListener("click", () =>
           userMessageDisplayDiv(geminiMessagediv.textContent)
         );
-
         //  main_container.style.display = "none";
       }
+
+     
 
       run();
     </script>
