@@ -223,7 +223,7 @@ padding: 5px;
     margin-left: 300px;
   }
   .header-profile {
-    width: 50%;
+    width: 100%;
     display: flex;
     justify-content: flex-end;
     gap: 10px;
@@ -232,22 +232,30 @@ padding: 5px;
   .info {
     margin-top: 2rem;
     display: flex;
+    gap: 40px;
     justify-content: space-around;
   }
   .info-add-new,
   .info-summary {
     display: flex;
-    height: 20rem;
+    height: 15rem;
     width: 30rem;
     background-color: var(--white);
     border-radius: 20px;
     padding: 1rem;
+    
+  }
+  .info-add-new,
+  .info-summary:nth-child(1){
+    margin-left: 10%;
   }
   
   .detail {
     margin-top: 2rem;
     display: flex;
     justify-content: space-around;
+    margin-left: 9%;
+    
   }
   
   .detail-category,
@@ -259,6 +267,10 @@ padding: 5px;
     border-radius: 20px;
     padding: 1rem;
   }
+  /* .detail-category,
+  .detail-recents:nth-child(1){
+    margin-left: 20%;
+  } */
   
   .add-btn,
   .formGroup input[type='submit'] {

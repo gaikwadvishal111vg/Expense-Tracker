@@ -1,9 +1,5 @@
 import incomeObj from './income.js';
 import expenseObj from './expense.js';
-
-
-
-
 // incomeTracker.initiate();
 
 class Tracker {
@@ -141,14 +137,16 @@ const currentUser = localStorage.getItem("currentUser");
 if(!currentUser){
   window.location.href = "./signup.html";
 }
-// function logout(){
-//   localStorage.removeItem("name");
-//   localStorage.removeItem("email");
-//   window.location.href = "login.html"
-// }
 
 
-const geminiAi = document.querySelector("#tracker");
-geminiAi.addEventListener("click", () =>{
-  window.location.href = "./gemini.html";
-})
+
+// const geminiAi = document.querySelector("#tracker");
+// geminiAi.addEventListener("click", () =>{
+//   window.location.href = "./gemini.html";
+// })
+
+// // Tax Calculater click event
+// const taxCalculator = document.getElementById("Calculator");
+// taxCalculator.addEventListener("click", () =>{
+//   window.location.href = "./tax.html";
+// })
